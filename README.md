@@ -128,7 +128,7 @@ Focus on delivering a working, clean, and well-structured solution — it's bett
   - createdAt: string
   - updatedAt: string
   - isActive: 0 | 1
-  - rules: []
+  - rules: Array of objects [{}]
 - POST workflow setup: /api/v1/workflow
   (payload)
   - name: string
@@ -136,12 +136,12 @@ Focus on delivering a working, clean, and well-structured solution — it's bett
   - category: "PRODUCT" | "BILLS" | "DISBURSEMENT"
   - custom: boolean
   - isActive: 0 | 1
-  - rules: []
+  - rules: Array of objects [{}]
     - isDefault: boolean
     - currency: string
     - transactionType: string
     - transactionLimit: number
-    - approvals: []
+    - approvals: Array of objects [{}]
       - levelOrder: number
       - levelName: string
       - assignedByUserId: boolean
@@ -155,12 +155,12 @@ Focus on delivering a working, clean, and well-structured solution — it's bett
   - category: "PRODUCT" | "BILLS" | "DISBURSEMENT"
   - custom: boolean
   - isActive: 0 | 1
-  - rules: []
+  - rules: Array of objects [{}]
     - isDefault: boolean
     - currency: string
     - transactionType: string
     - transactionLimit: number
-    - approvals: []
+    - approvals: Array of objects [{}]
       - levelOrder: number
       - levelName: string
       - assignedByUserId: boolean
