@@ -1,0 +1,103 @@
+$dotSize: rem(8px);
+
+.statusBadge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: rem(4px) rem(12px) rem(4px) rem(25px);
+  border-radius: rem(16px);
+  font-weight: 500;
+  text-transform: capitalize;
+
+  &:before {
+    content: "";
+    width: $dotSize;
+    height: $dotSize;
+    background-color: $color-green;
+    border-radius: 50%;
+    margin-right: rem(8px);
+    position: absolute;
+    left: rem(10px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.altBadge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: rem(4px);
+  padding: rem(4px) rem(12px);
+  border-radius: rem(16px);
+  font-weight: 500;
+  text-transform: capitalize;
+  max-width: fit-content;
+
+  > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.active,
+.completed,
+.success,
+.approved,
+.paid,
+.resolved {
+  background-color: $color-light-green;
+  color: $color-green;
+
+  &:before {
+    background-color: $color-green;
+  }
+}
+
+.failed,
+.inactive,
+.disabled,
+.error,
+.rejected,
+.cancelled,
+.overdue {
+  background-color: $color-light-red;
+  color: $color-red;
+
+  &:before {
+    background-color: $color-red;
+  }
+}
+
+.info,
+.none {
+  background-color: $color-light-grey;
+  color: $color-grey;
+
+  &:before {
+    background-color: $color-grey;
+  }
+}
+
+.in_progress {
+  background-color: $color-light-warning;
+  color: $color-warning;
+
+  &:before {
+    background-color: $color-warning;
+  }
+}
+
+.pending {
+  background-color: $color-light-purple;
+  color: $color-purple;
+
+  &:before {
+    background-color: $color-purple;
+  }
+
+  svg {
+    color: $color-purple;
+  }
+}

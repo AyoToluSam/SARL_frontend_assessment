@@ -1,0 +1,15 @@
+.status_field {
+  @include flex(row, 1rem, center);
+  width: 100%;
+}
+
+.no_border {
+  @include flex(row, 0.5rem, start);
+  width: max-content;
+}
+
+label {
+  span {
+    color: $color-blue;
+  }
+}

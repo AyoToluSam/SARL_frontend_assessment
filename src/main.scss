@@ -1,0 +1,126 @@
+@use "./scss/variables" as *;
+@use "./scss/globals";
+
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@100,200,300,400,500,600,700,800,900&display=swap");
+
+:root {
+  font-family: "Satoshi", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+  font-size: rem(14px);
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: rgba(15, 15, 189, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: $color-grey;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $color-grey;
+    border-radius: 10px;
+    max-height: 20px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: $color-text;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: $color-text;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-size: font-size(button);
+  font-weight: font-weight(button);
+  letter-spacing: rem(1px);
+
+  @include mq(small) {
+    font-size: rem(14px);
+  }
+}
+
+li {
+  list-style: none;
+  font-size: font-size(li);
+  font-weight: font-weight(li);
+}
+
+p {
+  font-size: font-size(p);
+  font-weight: font-weight(p);
+
+  @include mq(small) {
+    font-size: rem(13px);
+  }
+}
+
+label {
+  font-size: font-size(label);
+  font-weight: font-weight(label);
+  font-family: inherit;
+}
+
+input,
+textarea {
+  font-size: font-size(input);
+  font-weight: font-weight(input);
+  font-family: inherit;
+  color: $color-text;
+  background: transparent;
+
+  &::placeholder {
+    letter-spacing: rem(0.75px);
+    font-family: inherit;
+    font-weight: 500;
+    color: $color-text-alt;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition:
+    background-color 600000s 0s,
+    color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
+.selected__placeholder {
+  font-family: inherit !important;
+  font-weight: 500 !important;
+  color: $color-text-alt !important;
+  margin: 0 !important;
+}

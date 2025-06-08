@@ -1,0 +1,89 @@
+.table_footer {
+  @include flex(row, 1rem, center, space-between);
+  padding: 2rem;
+  background: transparent;
+
+  .nav_container {
+    @include flex(row, 3rem, center);
+
+    .nav_button {
+      border: 1px solid $color-blue;
+      padding: 8px 24px;
+      border-radius: 8px;
+      color: $color-blue;
+      font-size: 14px;
+      font-weight: 500;
+
+      @include mq(medium) {
+        font-size: 12px;
+        padding: 8px 20px;
+      }
+    }
+
+    .nav_pages {
+      @include flex(row, 0.5rem, center);
+
+      .page {
+        @include flex(row, 0, center, center);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        color: $color-grey;
+        font-size: 14px;
+        cursor: pointer;
+
+        p {
+          @include flex(row, 0, center, center);
+        }
+
+        &:hover {
+          background-color: $color-light-grey;
+          color: $color-text;
+        }
+
+        &.current {
+          background-color: $color-light-grey;
+          color: $color-blue;
+        }
+
+        @include mq(medium) {
+          font-size: 12px;
+          width: 26px;
+          height: 26px;
+        }
+      }
+    }
+  }
+
+  .go_to {
+    @include flex(row, 1rem, center);
+
+    input {
+      border: none;
+      outline: none;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid $color-grey;
+      border-radius: 6px;
+      font-size: 14px;
+      min-width: rem(90px);
+
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+
+    button {
+      background-color: $color-blue;
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+
+      @include mq(medium) {
+        font-size: 12px;
+        padding: 8px 20px;
+      }
+    }
+  }
+}

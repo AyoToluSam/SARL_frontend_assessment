@@ -1,0 +1,55 @@
+.login {
+  @include flex(column, $gap: 2rem, $align: flex-start);
+  width: 100%;
+  max-width: 40rem;
+
+  &__title {
+    @include flex(column);
+    width: 100%;
+  }
+
+  &__text {
+    color: $color-text-alt;
+    font-weight: 500;
+  }
+
+  &__form {
+    @include flex(column);
+    color: black;
+    width: 100%;
+  }
+
+  .remember_me {
+    @include flex($justify: space-between);
+    width: 100%;
+
+    @include mq(small) {
+      flex-direction: column;
+    }
+
+    label {
+      @include flex($gap: 0.5rem);
+      font-size: rem(15px);
+      color: $color-text-alt;
+
+      > input {
+        accent-color: $color-blue;
+      }
+    }
+
+    a {
+      font-weight: 700;
+      color: $color-blue;
+      font-size: rem(16px);
+    }
+  }
+
+  p {
+    font-weight: 700;
+    font-size: rem(16px);
+
+    a {
+      color: $color-blue;
+    }
+  }
+}

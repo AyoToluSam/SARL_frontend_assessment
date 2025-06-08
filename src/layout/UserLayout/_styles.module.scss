@@ -1,0 +1,48 @@
+.user__layout {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: spacing("xxl");
+    display: flex;
+    padding: 1rem spacing("xl");
+    background-color: var(--color-neutral-light);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    gap: spacing("xs");
+    align-items: center;
+    font-size: fontSize("md");
+    color: var(--color-neutral-dark);
+
+    & > span {
+      margin-top: 5px;
+    }
+
+    p:last-of-type {
+      color: $color-blue;
+    }
+  }
+
+  &__main {
+    padding: spacing("xl");
+    max-height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeefc;
+  }
+}
+
+main {
+  width: 100%;
+}

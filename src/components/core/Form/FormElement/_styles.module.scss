@@ -1,0 +1,33 @@
+.form_element {
+  @include flex(column, 0.25rem, flex-start);
+  width: 100%;
+  height: 100%;
+  // min-width: 100%;
+
+  .form__input {
+    @include flex(column, 0.1rem, flex-start, flex-start);
+    width: 100%;
+    background: white;
+
+    > label {
+      color: $color-text-dark;
+
+      > span {
+        color: $color-red;
+      }
+    }
+  }
+
+  .selected__placeholder {
+    max-width: 24ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+
+  .error {
+    color: $color-red;
+    margin-top: -0.4rem;
+  }
+}

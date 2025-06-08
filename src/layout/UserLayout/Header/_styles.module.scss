@@ -1,0 +1,135 @@
+.user__layout {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: spacing("xxl");
+    display: flex;
+    padding: 1rem spacing("xl");
+    background-color: var(--color-neutral-light);
+    border-bottom: 2px solid $color-light-grey;
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    gap: spacing("xs");
+    align-items: center;
+    color: var(--color-neutral-dark);
+
+    & > span {
+      margin-top: 5px;
+      color: $color-blue;
+    }
+
+    p:last-of-type {
+      color: $color-blue;
+    }
+  }
+
+  &__searchbar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 22rem;
+    box-shadow: 0 0 0 1px $color-light-grey;
+
+    &:focus-within {
+      border-color: transparent;
+    }
+
+    &__icon {
+      color: $color-grey;
+      margin-top: 2px;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+
+    .input {
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      color: #1f2937;
+      background: transparent;
+      width: 100%;
+
+      &::placeholder {
+        color: $color-grey;
+      }
+    }
+  }
+
+  &__main {
+    padding: spacing("xl");
+    max-height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+  }
+
+  &__auth {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+
+    &__profile {
+      display: flex;
+      align-items: center;
+      gap: spacing("xs");
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-light-blue;
+      }
+
+      .icon {
+        color: $color-grey;
+      }
+
+      &__details {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__username {
+        font-size: rem(15px);
+      }
+
+      &__role {
+        color: $color-text-alt;
+        font-size: rem(14px);
+        font-weight: 400;
+      }
+    }
+
+    &__notification {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    & img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+
+main {
+  width: 100%;
+}

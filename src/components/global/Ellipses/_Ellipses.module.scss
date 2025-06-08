@@ -1,0 +1,84 @@
+.ellipses_container {
+  position: relative;
+  max-width: max-content;
+  z-index: 999;
+
+  .icon {
+    padding: 0.25rem;
+    border: 1px solid $color-border-grey;
+    border-radius: 6px;
+    color: $color-grey;
+    cursor: pointer;
+    transition: 0.2s linear;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.2s linear;
+    }
+  }
+
+  ul {
+    position: absolute;
+    z-index: 999;
+    background-color: #fff;
+    min-width: max-content;
+    border: 1px solid $color-border-grey;
+    border-radius: 8px;
+    box-shadow: $box-shadow;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+    &.top_left {
+      left: 0;
+      bottom: calc(100% + 0.25rem);
+    }
+
+    &.top_center {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: calc(100% + 0.25rem);
+    }
+
+    &.top_right {
+      right: 0;
+      bottom: calc(100% + 0.25rem);
+    }
+
+    &.bottom_left {
+      left: 0;
+      top: calc(100% + 0.25rem);
+    }
+
+    &.bottom_center {
+      left: 50%;
+      transform: translateX(-50%);
+      top: calc(100% + 0.25rem);
+    }
+
+    &.bottom_right {
+      right: 0;
+      top: calc(100% + 0.25rem);
+    }
+
+    li {
+      @include flex(row, 0.5rem, center);
+      font-size: 13px;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid $color-border-grey;
+      cursor: pointer;
+      transition: 0.3s linear;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        transform: translateX(4px);
+        transition: 0.3s linear;
+      }
+    }
+  }
+}

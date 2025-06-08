@@ -1,0 +1,170 @@
+@use "sass:math";
+@use "sass:map";
+@use "sass:color";
+
+$font-primary: "Satoshi";
+
+$color-text: rgba(16, 24, 40, 1);
+$color-text-alt: rgba(102, 112, 133, 1);
+$color-text-dark: rgba(7, 13, 9, 1);
+
+$color-neutral-light: rgba(252, 252, 253, 1);
+$color-neutral-dark: rgba(212, 216, 226, 1);
+
+$color-orange: rgba(255, 100, 26, 1);
+$color-light-blue: rgba(255, 238, 229, 1);
+$color-blue: rgba(15, 15, 189, 1);
+$color-light-blue: rgba(87, 87, 240, 0.086);
+$color-grey: rgba(136, 149, 167, 1);
+$color-light-grey: rgba(242, 242, 242, 1);
+$color-mid-grey: rgba(249, 252, 254, 1);
+$color-dark-grey: rgb(102, 112, 133);
+$color-deep-grey: rgba(249, 245, 255, 1);
+$color-border-grey: rgba(208, 213, 221, 1);
+$color-border-light-grey: rgba(234, 236, 240, 1);
+$color-border-mid-grey: rgba(225, 231, 236, 1);
+$color-green: rgba(2, 122, 72, 1);
+$color-light-green: rgba(236, 253, 243, 1);
+$color-dark-green: rgba(50, 72, 77, 1);
+$color-red: rgb(217, 45, 32);
+$color-light-red: rgb(255, 234, 234);
+$color-purple: rgba(53, 56, 205, 1);
+$color-light-purple: rgba(238, 244, 255, 1);
+$color-warning: rgba(181, 71, 8, 1);
+$color-light-warning: rgba(255, 250, 235, 1);
+
+$color-input: rgb(74, 74, 74);
+$color-placeholder: rgb(206, 214, 222);
+$color-label: rgb(184, 196, 206);
+$color-input-disabled: rgb(245, 248, 250);
+
+$box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+$box-shadow-alt: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+$screen-sizes: (
+  "tiny": 372px,
+  "small": 480px,
+  "medium": 768px,
+  "big": 1024px,
+  "large": 1280px,
+  "extra": 1440px,
+);
+
+$font-sizes: (
+  "p": 15px,
+  "a": 15px,
+  "li": 15px,
+  "button": 16px,
+  "label": 15px,
+  "input": 15px,
+);
+
+$font-weights: (
+  "p": 500,
+  "a": 500,
+  "li": 500,
+  "button": 600,
+  "label": 500,
+  "input": 500,
+);
+
+$spacings: (
+  "2xs": 4px,
+  "xs": 8px,
+  "sm": 12px,
+  "md": 16px,
+  "lg": 24px,
+  "xl": 32px,
+  "2xl": 40px,
+);
+
+@function screen-size($size) {
+  @return map.get($screen-sizes, $size);
+}
+
+@function font-size($tag) {
+  @return map.get($font-sizes, $tag);
+}
+
+@function font-weight($tag) {
+  @return map.get($font-weights, $tag);
+}
+
+@function spacing($size) {
+  @return map.get($spacings, $size);
+}
+
+@function rem($value, $base: 16px) {
+  @return calc($value / $base) + rem;
+}
+
+@function lighten-color($color, $amount: 10%) {
+  @return color.adjust($color, $lightness: $amount);
+}
+
+@function darken-color($color, $amount: 10%) {
+  @return color.adjust($color, $lightness: -$amount);
+}
+
+@mixin flex($direction: row, $gap: 1rem, $align: center, $justify: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid($repeat, $row-gap, $column-gap: "") {
+  display: grid;
+  grid-template-columns: repeat($repeat, 1fr);
+  gap: $row-gap;
+  row-gap: $row-gap;
+  column-gap: $column-gap;
+}
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin mq($screen-size, $type: max-width) {
+  @if map.has-key($screen-sizes, $screen-size) {
+    $mapped-screen-size: screen-size($screen-size);
+
+    @if $type == max-width {
+      @media screen and (max-width: $mapped-screen-size) {
+        @content;
+      }
+    } @else if $type == min-width {
+      @media screen and (min-width: $mapped-screen-size) {
+        @content;
+      }
+    } @else {
+      @error "Unknown type #{$type}";
+    }
+  } @else {
+    @error "Invalid screen size #{$screen-size}";
+  }
+}
+
+@mixin hr {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 1px;
+  background: $color-border-grey;
+}
+
+@mixin scale-animation($scale: 1.075, $time: 1s) {
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale($scale);
+    }
+  }
+
+  animation: scale $time alternate infinite linear;
+}

@@ -1,0 +1,9 @@
+.emptyData {
+  @include flex(column, 1rem, center, center);
+  padding: 2rem;
+  width: 100%;
+
+  p {
+    font-size: 18px;
+  }
+}

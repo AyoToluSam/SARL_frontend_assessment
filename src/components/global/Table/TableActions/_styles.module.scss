@@ -1,0 +1,31 @@
+.table_actions {
+  @include flex(row, 1.5rem, "");
+
+  button {
+    background-color: none;
+    border: none;
+    border-bottom: 2px $color-blue solid;
+    color: $color-blue;
+    font-size: rem(14px);
+  }
+
+  .icon {
+    color: $color-dark-grey;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-text;
+      transform: scale(1.1);
+    }
+
+    &.disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+
+      &:hover {
+        color: $color-dark-grey;
+        transform: none;
+      }
+    }
+  }
+}

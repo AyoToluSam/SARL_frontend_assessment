@@ -1,0 +1,44 @@
+.export {
+  position: relative;
+  height: fit-content;
+
+  &__content {
+    position: absolute;
+    top: 105%;
+    right: 0;
+    display: none;
+    min-width: rem(186px);
+    border: rem(1px) solid $color-border-grey;
+    background-color: white;
+    box-shadow: $box-shadow-alt;
+    border-radius: rem(8px);
+    z-index: 1;
+
+    &__active {
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: rem(10px);
+        border-radius: rem(8px);
+        font-weight: 400;
+        min-width: max-content;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color-light-grey;
+        }
+
+        .ext {
+          font-size: rem(12px);
+          color: $color-text-alt;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.date_range_form {
+  @include flex(row, 0, flex-start);
+  width: 100%;
+
+  h3 {
+    font-weight: 500;
+  }
+
+  h3,
+  .submit_button {
+    @include flex(row, 0, center, center);
+    padding: 0.75rem 1rem;
+    border: 1px solid $color-border-grey;
+    border-radius: 6px;
+  }
+
+  .submit_button {
+    background-color: $color-light-grey;
+    padding: 1rem;
+  }
+}

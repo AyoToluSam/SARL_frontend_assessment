@@ -1,0 +1,37 @@
+.text_input {
+  position: relative;
+  @include flex(row, 0.6rem, start);
+  width: 100%;
+  border: 1px solid $color-border-mid-grey;
+  border-radius: 8px;
+  padding: spacing("sm") 20px;
+
+  input {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    color: $color-text;
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+
+  span {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    svg {
+      font-size: rem(24px);
+      color: #4f4f4f;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.table_filter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+  // padding: rem(15px) 0;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .filter_group {
+    @include flex(row, 0.75rem, center);
+
+    .reload {
+      padding: 0.7rem;
+      background-color: $color-blue;
+      border-radius: 6px;
+    }
+  }
+}

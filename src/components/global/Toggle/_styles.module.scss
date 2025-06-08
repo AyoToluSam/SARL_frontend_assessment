@@ -1,0 +1,8 @@
+.switch {
+  @include flex(row, 1rem, start);
+  max-width: max-content;
+
+  & div:first-of-type {
+    opacity: 100% !important;
+  }
+}

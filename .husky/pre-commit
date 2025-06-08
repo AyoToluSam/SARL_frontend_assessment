@@ -1,0 +1,17 @@
+# Run Prettier on staged files
+prettier $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g') --write --ignore-unknown
+
+# Run ESLint on staged files
+eslint $(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx|js|jsx)$' | sed 's| |\\ |g')
+
+# Capture the exit code of ESLint
+ESLINT_EXIT_CODE=$?
+
+# Abort the commit if ESLint found errors
+if [ $ESLINT_EXIT_CODE -ne 0 ]; then
+  echo "ESLint found issues. Please fix them before committing."
+  exit 1  # Abort the commit
+fi
+
+# If ESLint passes, update Git index with the changes made
+git update-index --again

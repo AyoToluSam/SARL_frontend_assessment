@@ -1,0 +1,102 @@
+.dropdown_filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  h4 {
+    color: $color-dark-grey;
+  }
+
+  .icon {
+    margin-right: rem(8px);
+  }
+
+  .clear {
+    width: 100%;
+  }
+
+  .group {
+    color: $color-light-grey;
+  }
+
+  .group_list {
+    margin-bottom: rem(10px);
+  }
+
+  .button {
+    gap: 0.5rem;
+    padding: rem(12px) 1.75rem;
+
+    @include mq(small) {
+      gap: 4px;
+      padding: rem(8px) rem(8px);
+    }
+  }
+
+  .content {
+    position: absolute;
+    z-index: 99;
+    top: 105%;
+    left: 0;
+    display: none;
+    min-width: rem(200px);
+    width: max-content;
+    padding: rem(10px);
+    border: rem(1px) solid $color-border-grey;
+    background-color: $color-light-grey;
+    box-shadow: $box-shadow;
+    border-radius: rem(8px);
+    z-index: 1;
+
+    &.reverse {
+      left: auto;
+      right: 0;
+    }
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      min-width: max-content;
+
+      li {
+        display: flex;
+        gap: rem(10px);
+        padding: rem(10px);
+        font-weight: 400;
+      }
+    }
+
+    .item {
+      padding: rem(5px) rem(10px);
+
+      input {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .extra_filters {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+    margin-bottom: 1.25rem;
+  }
+
+  .date_range {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+  }
+
+  .other_filters {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+  }
+}

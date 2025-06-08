@@ -1,0 +1,14 @@
+.textarea_container {
+  border: 0;
+  font-size: rem(16px);
+  width: 100%;
+  background-color: #fff;
+
+  &::placeholder {
+    font-size: 14px;
+  }
+}
+
+.textarea_container:focus {
+  outline: none;
+}

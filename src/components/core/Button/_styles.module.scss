@@ -1,0 +1,179 @@
+%button {
+  border-radius: 8px;
+  white-space: nowrap;
+  font-family: inherit;
+  @include flex(row, 0.5rem, center, center);
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+%text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $color-blue;
+  letter-spacing: 0.75px;
+
+  &.small,
+  &.medium,
+  &.big {
+    padding: 0;
+  }
+}
+
+.main {
+  @extend %button;
+  background-color: $color-blue;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: darken-color($color-blue, 6%);
+  }
+
+  &:focus,
+  &:active {
+    background-color: $color-blue;
+    border: 2px solid $color-blue;
+  }
+
+  .icon {
+    color: #fff;
+  }
+}
+
+.alt {
+  @extend %button;
+  background-color: #fff;
+  color: $color-blue;
+  border: 1px solid $color-blue;
+  box-shadow: $box-shadow;
+  transition:
+    background-color 0.2s ease-in-out,
+    border 0.2s ease-in-out;
+
+  &:hover {
+    background-color: darken-color(#fff, 2%);
+  }
+
+  &:focus,
+  &:active {
+    background-color: $color-light-blue;
+  }
+
+  .icon {
+    color: $color-blue;
+  }
+}
+
+.grey {
+  @extend %button;
+  background-color: #fff;
+  border: rem(1px) solid $color-border-grey;
+  color: $color-dark-grey;
+  font-weight: 600;
+
+  &:hover {
+    background-color: darken-color(#fff, 4%);
+  }
+
+  .icon {
+    color: $color-dark-grey;
+  }
+}
+
+.red {
+  @extend %button;
+  background-color: $color-red;
+  border: rem(1px) solid $color-red;
+  color: #fff;
+  font-weight: 600;
+
+  &:hover {
+    background-color: darken-color($color-red, 4%);
+  }
+
+  .icon {
+    color: #fff;
+  }
+}
+
+.text {
+  @extend %text;
+
+  &.small {
+    font-size: rem(15px);
+
+    .icon {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.underlined {
+  @extend %text;
+  text-decoration: underline;
+
+  &.small {
+    font-size: rem(15px);
+
+    .icon {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.children {
+  &.small,
+  &.medium,
+  &.big {
+    padding: 0;
+  }
+}
+
+.full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.fit {
+  width: fit-content;
+  max-width: fit-content;
+}
+
+.left {
+  flex-direction: row;
+}
+
+.right {
+  flex-direction: row-reverse;
+}
+
+.icon {
+  display: flex;
+}
+
+.loading {
+  max-width: 24px;
+}
+
+.big {
+  padding: 1rem 2rem;
+}
+
+.medium {
+  padding: rem(14px) 2rem;
+}
+
+.small {
+  padding: rem(12px) 1.75rem;
+}
+
+.extra_small {
+  padding: rem(12px) 0.8rem;
+  border-radius: 4px;
+}

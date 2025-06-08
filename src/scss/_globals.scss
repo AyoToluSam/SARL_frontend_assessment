@@ -1,0 +1,31 @@
+@use "./variables" as *;
+
+.error {
+  color: $color-red;
+}
+
+.truncate {
+  max-width: 64ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+
+  &[data-title]:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    padding: 1rem;
+    z-index: 9;
+    top: calc(100% + 0.25rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: unset;
+    background-color: #fff;
+    box-shadow: $box-shadow;
+    border: 1px solid $color-grey;
+    border-radius: 8px;
+  }
+}

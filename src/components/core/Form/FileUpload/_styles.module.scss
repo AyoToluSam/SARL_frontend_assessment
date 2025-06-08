@@ -1,0 +1,9 @@
+.fileUpload {
+  width: 100%;
+  position: relative;
+
+  .custom_component {
+    width: 100%;
+    @include flex(row, 1rem, center, center);
+  }
+}

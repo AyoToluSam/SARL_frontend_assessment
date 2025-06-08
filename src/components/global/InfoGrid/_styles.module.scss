@@ -1,0 +1,34 @@
+.options {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: rem(10px);
+  width: 100%;
+  border-top: rem(1px) solid $color-neutral-dark;
+  border-left: rem(1px) solid $color-neutral-dark;
+
+  .option {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4px);
+    padding: rem(8px) rem(24px);
+    border-right: rem(1px) solid $color-neutral-dark;
+    border-bottom: rem(1px) solid $color-neutral-dark;
+    width: 100%;
+
+    > span:first-child {
+      color: $color-text-alt;
+      text-transform: uppercase;
+      word-wrap: break-word;
+      width: 100%;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    > span:last-child {
+      font-size: 14px;
+      font-weight: 500;
+      word-wrap: break-word;
+      width: 100%;
+    }
+  }
+}

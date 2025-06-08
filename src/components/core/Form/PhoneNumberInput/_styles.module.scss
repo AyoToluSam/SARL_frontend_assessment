@@ -1,0 +1,25 @@
+.phoneNumber_container {
+  width: 100%;
+  margin: 0;
+  background-color: transparent;
+  border: 1px solid $color-border-mid-grey;
+  border-radius: 8px;
+  padding: spacing("sm") 20px;
+
+  input,
+  input:focus {
+    outline: none;
+    padding: 0rem 0.5rem;
+    margin: 0rem 0.5rem;
+    border: none;
+    border-radius: 0px;
+    border-left: 1.5px solid #e5e5e5;
+    background: none;
+    font-family: $font-primary;
+    font-size: 14px;
+
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+}

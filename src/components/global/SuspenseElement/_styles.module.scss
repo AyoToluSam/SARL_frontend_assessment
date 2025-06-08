@@ -1,0 +1,16 @@
+.suspense_container {
+  width: 100%;
+  @include flex(row, 0, center, center);
+
+  &.page_loader {
+    min-height: 96vh;
+  }
+
+  img {
+    min-width: 224px;
+
+    @include mq(medium) {
+      min-width: 120px;
+    }
+  }
+}

@@ -1,0 +1,181 @@
+.aside {
+  background-color: white;
+  justify-content: space-between;
+  border-right: 2px solid $color-light-grey;
+  padding: spacing("xs") 0px;
+  display: flex;
+  flex-direction: column;
+  gap: spacing("sm");
+  flex-shrink: 0;
+
+  & .logo {
+    width: fit-content;
+    padding: 2rem 2rem 0;
+    letter-spacing: 3px;
+  }
+
+  &__menu__container {
+    padding: 1rem 0.5rem 0 1.5rem;
+    flex-grow: 1;
+    width: 100%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      overflow-y: hidden;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        height: 4px;
+        width: 4px;
+        background-color: $color-light-grey;
+        scroll-behavior: smooth;
+        visibility: hidden;
+
+        &:hover {
+          visibility: visible;
+        }
+      }
+
+      &::-webkit-scrollbar-thumb {
+        visibility: hidden;
+
+        &:hover {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: spacing("lg");
+    flex-shrink: 0;
+    position: relative;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      a,
+      button {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        cursor: pointer;
+        color: $color-text-dark;
+      }
+
+      button {
+        font-weight: 500;
+        padding: 1rem 0rem;
+        font-size: 15px;
+        &:hover {
+          color: $color-red;
+        }
+      }
+    }
+
+    & button {
+      & svg {
+        margin-left: 4px;
+      }
+    }
+
+    &__auth {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      &__profile {
+        display: flex;
+        align-items: center;
+        gap: spacing("xs");
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+
+        &:hover {
+          background-color: $color-light-blue;
+        }
+
+        .icon {
+          color: $color-grey;
+        }
+
+        &__details {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__username {
+          font-size: rem(15px);
+        }
+
+        &__role {
+          color: $color-text-alt;
+          font-size: rem(14px);
+          font-weight: 400;
+        }
+
+        &__logout {
+          position: fixed;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          opacity: 0;
+          transform: translateY(-10px);
+          max-height: 0;
+          pointer-events: none;
+          top: 70px;
+          right: 24px;
+          backdrop-filter: brightness(0.9);
+          background-color: #fff;
+          width: 200px;
+          padding: 14px;
+          border-radius: 12px;
+          box-shadow:
+            0px 2.77px 2.21px 0px #00000005,
+            0px 6.65px 5.32px 0px #00000007,
+            0px 12.52px 10.02px 0px #00000009,
+            0px 22.34px 17.87px 0px #0000000b,
+            0px 41.78px 33.42px 0px #0000000d,
+            0px 100px 80px 0px #00000012;
+          transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            max-height 0.2s ease;
+
+          &__open {
+            opacity: 1;
+            transform: translateY(0);
+            max-height: 500px;
+            z-index: 9999;
+            pointer-events: auto;
+          }
+
+          &__box {
+            display: flex;
+            align-items: center;
+            padding: spacing("sm");
+            gap: spacing("xs");
+            height: 40px;
+            color: #ab263c;
+          }
+        }
+      }
+
+      & img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+}

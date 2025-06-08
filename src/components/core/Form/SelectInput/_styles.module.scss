@@ -1,0 +1,14 @@
+.select_input {
+  width: 100%;
+  position: relative;
+  font-size: rem(16px);
+  width: 100%;
+  border: 1px solid $color-border-mid-grey;
+  border-radius: 8px;
+  padding: spacing("sm") 20px;
+
+  svg {
+    position: absolute;
+    top: 3.5px;
+  }
+}

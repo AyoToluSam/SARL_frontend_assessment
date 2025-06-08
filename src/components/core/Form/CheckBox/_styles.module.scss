@@ -1,0 +1,15 @@
+.checkbox {
+  @include flex(row, 0, center);
+  min-width: max-content;
+
+  input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    filter: hue-rotate(142.5deg);
+  }
+
+  label {
+    color: $color-text;
+  }
+}

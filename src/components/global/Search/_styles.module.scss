@@ -1,0 +1,36 @@
+.search_input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: rem(8px) rem(16px);
+  border: 1px solid $color-border-grey;
+  border-radius: rem(8px);
+  width: 100%;
+  // min-width: 100%;
+  max-width: rem(360px);
+  background-color: #fff;
+
+  @include mq(medium) {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .icon {
+    color: $color-grey;
+  }
+
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0 rem(8px);
+    width: 100%;
+  }
+
+  .close {
+    position: absolute;
+    right: 1.5rem;
+    color: $color-dark-grey;
+    cursor: pointer;
+  }
+}
