@@ -10,7 +10,7 @@ import { setSessionExpired } from "../../store/app/global/sessionExpiredSlice";
 const baseQuery = fetchBaseQuery({
   baseUrl: API_BASE_URL + "/api/v1",
   prepareHeaders: (headers) => {
-    const accessToken = "";
+    const accessToken = localStorage.getItem("token");
 
     if (accessToken) {
       headers.set("Authorization", `Bearer ${accessToken}`);
