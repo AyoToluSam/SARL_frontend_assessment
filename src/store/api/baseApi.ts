@@ -8,7 +8,7 @@ import { API_BASE_URL } from "./authApi";
 import { setSessionExpired } from "../../store/app/global/sessionExpiredSlice";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: API_BASE_URL,
+  baseUrl: API_BASE_URL + "/api/v1",
   prepareHeaders: (headers) => {
     const accessToken = "";
 

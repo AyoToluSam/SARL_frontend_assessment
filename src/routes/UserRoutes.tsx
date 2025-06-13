@@ -6,6 +6,7 @@ const UserRoutes = () => {
   return (
     <Fragment>
       <Route path="dashboard" key="dashboard" element={<Dashboard />} />
+      <Route path="units" key="units" element={<h1>Unit Setup</h1>} />
       <Route
         path="customer-group"
         key="customer-group"
@@ -16,7 +17,6 @@ const UserRoutes = () => {
         key="customer-setup"
         element={<h1>Customer Setup</h1>}
       />
-      <Route path="roles" key="roles" element={<h1>Roles</h1>} />
       <Route path="users" key="users" element={<h1>Users</h1>} />
       <Route
         path="workflow-setup"

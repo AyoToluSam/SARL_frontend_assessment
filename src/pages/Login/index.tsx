@@ -2,14 +2,32 @@ import FormElement from "@/components/core/Form/FormElement";
 import styles from "./_styles.module.scss";
 import { FormProvider, useForm } from "react-hook-form";
 import Button from "@/components/core/Button";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Credentials } from "@/store/app/auth/Login/types";
+import { useLoginMutation } from "@/store/app/auth/Login/slice";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const methods = useForm<Credentials>({ mode: "all" });
   const { handleSubmit } = methods;
 
-  const onSubmit = () => {};
+  const [login] = useLoginMutation();
+
+  const onSubmit = (data: Credentials) => {
+    login(data)
+      .unwrap()
+      .then(() => {
+        navigate("/dashboard");
+      })
+      .catch((err) =>
+        toast.error(
+          err?.message ||
+            "An error occured, please check credentials and try again."
+        )
+      );
+  };
 
   return (
     <div className={styles.login}>

@@ -22,6 +22,12 @@ export const navSections: navSectionProps[] = [
     permissions: ["*"],
   },
   {
+    label: "Unit Setup",
+    href: "/units",
+    icon: <Star size={24} />,
+    permissions: ["unit-setup:all"],
+  },
+  {
     label: "Customer Management",
     icon: <User size={24} />,
     subLinks: [
@@ -36,12 +42,6 @@ export const navSections: navSectionProps[] = [
         permissions: ["manage-customer:all"],
       },
     ],
-  },
-  {
-    label: "Roles & Permissions",
-    href: "/roles",
-    icon: <Star size={24} />,
-    permissions: ["role-and-permission:all"],
   },
   {
     label: "User Management",
