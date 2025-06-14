@@ -179,7 +179,11 @@ Focus on delivering a working, clean, and well-structured solution — it's bett
 
 ## 📷 Design
 
-- The images will be provided.
+![Screenshot 5](https://github.com/user-attachments/assets/21ebb155-2004-408a-a656-058b41e0728a)
+![Screenshot 4](https://github.com/user-attachments/assets/8945e31b-5145-4e65-ae9c-2843a349acc2)
+![Screenshot 3](https://github.com/user-attachments/assets/089d10f3-87f9-43d7-a709-05348f40b4b5)
+![Screenshot 2](https://github.com/user-attachments/assets/aae67b90-dac6-4e86-82b3-c75c3d537943)
+![Screenshot 1](https://github.com/user-attachments/assets/6519d0fd-978b-4f37-a83d-8d5c1f3effb4)
 
 ---
 
